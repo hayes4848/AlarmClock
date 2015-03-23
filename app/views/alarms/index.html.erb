@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alarm Clock</h1>
+
+<canvas id="canvas" height="300" width="300" style="background-color:#333"></canvas>
+
+<div id="time"><%="#{@alarm.hour}"+"#{@alarm.minute}"+"#{@alarm.second}"%></div>
+
+
+<h2>Alarm Set for:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hour</th>
+      <th>Minute</th>
+      <th>Second</th>
+      <!-- <th>URL:</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td><%= @alarm.hour %></td>
+        <td><%= @alarm.minute %></td>
+        <td><%= @alarm.second %></td>
+        <td class="hide" id="address"><%= "#{@alarm.address}" %></td>
+      </tr>
+    
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alarm', new_alarm_path %>
